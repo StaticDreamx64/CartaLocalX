@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Combo — Carta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --asfalto:#1C1815;
+    --asfalto2:#262019;
+    --mostaza:#F2A93B;
+    --ketchup:#D93A2B;
+    --pepinillo:#6E9B4F;
+    --papel:#F7EFE0;
+    --papel-op:#F7EFE0cc;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--asfalto);
+    color:var(--papel);
+    font-family:'Space Grotesk',sans-serif;
+    padding:0 0 60px;
+  }
+  .hero{
+    position:relative;
+    padding:64px 24px 48px;
+    text-align:center;
+    background:
+      radial-gradient(circle at 20% 20%, var(--asfalto2) 0%, transparent 40%),
+      var(--asfalto);
+    border-bottom:6px dashed var(--mostaza);
+  }
+  .hero .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    letter-spacing:4px;
+    color:var(--pepinillo);
+    text-transform:uppercase;
+  }
+  .hero h1{
+    font-family:'Anton',sans-serif;
+    font-size:clamp(48px,10vw,96px);
+    color:var(--mostaza);
+    line-height:0.95;
+    margin:12px 0 8px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    text-shadow: 4px 4px 0 var(--ketchup);
+  }
+  .hero p{
+    font-size:16px;
+    color:var(--papel-op);
+    max-width:420px;
+    margin:12px auto 0;
+  }
+  .section{
+    max-width:760px;
+    margin:0 auto;
+    padding:48px 24px 0;
+  }
+  .section-title{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-bottom:24px;
+  }
+  .section-title h2{
+    font-family:'Anton',sans-serif;
+    font-size:28px;
+    text-transform:uppercase;
+    color:var(--papel);
+    letter-spacing:1px;
+    white-space:nowrap;
+  }
+  .section-title .line{
+    height:2px;
+    width:100%;
+    background:repeating-linear-gradient(90deg,var(--mostaza) 0 10px,transparent 10px 18px);
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+  }
+  .ticket{
+    position:relative;
+    background:var(--papel);
+    color:var(--asfalto);
+    padding:20px 20px 26px;
+    clip-path: polygon(
+      0% 0%, 100% 0%, 100% 92%,
+      95% 100%, 90% 92%, 85% 100%, 80% 92%, 75% 100%, 70% 92%, 65% 100%,
+      60% 92%, 55% 100%, 50% 92%, 45% 100%, 40% 92%, 35% 100%, 30% 92%,
+      25% 100%, 20% 92%, 15% 100%, 10% 92%, 5% 100%, 0% 92%
+    );
+    transition: transform 0.15s ease;
+  }
+  .ticket:hover{ transform: rotate(-1deg) translateY(-2px); }
+  .ticket-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:12px;
+    margin-bottom:8px;
+  }
+  .ticket-top h3{
+    font-size:19px;
+    font-weight:700;
+  }
+  .price{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:500;
+    font-size:16px;
+    background:var(--ketchup);
+    color:var(--papel);
+    padding:4px 10px;
+    white-space:nowrap;
+  }
+  .ticket p{
+    font-size:14px;
+    color:#4a453d;
+    line-height:1.5;
+  }
+  .badge{
+    display:inline-block;
+    margin-top:10px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--pepinillo);
+    border:1px solid var(--pepinillo);
+    padding:2px 8px;
+  }
+  .footer{
+    text-align:center;
+    margin-top:64px;
+    padding:0 24px;
+    color:var(--papel-op);
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+  }
+  .footer .stamp{
+    display:inline-block;
+    border:2px solid var(--mostaza);
+    color:var(--mostaza);
+    padding:10px 20px;
+    transform:rotate(-3deg);
+    font-family:'Anton',sans-serif;
+    font-size:18px;
+    letter-spacing:1px;
+    margin-bottom:16px;
+  }
+  @media (max-width:480px){
+    .hero{padding:48px 16px 36px;}
+    .section{padding:36px 16px 0;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="eyebrow">Abierto · 18:00 — 02:00</div>
+    <h1>La Combo</h1>
+    <p>Completos, churrascos y papas locas. Directo del carro a tu mesa, sin vueltas.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><h2>Completos</h2><div class="line"></div></div>
+    <div class="grid">
+      <div class="ticket">
+        <div class="ticket-top"><h3>Italiano</h3><span class="price">$2.500</span></div>
+        <p>Vienesa, tomate picado, palta y mayo casera en pan marraqueta.</p>
+      </div>
+      <div class="ticket">
+        <div class="ticket-top"><h3>Dinámico</h3><span class="price">$2.800</span></div>
+        <p>Vienesa, chucrut, tomate, palta, mayo, salsa americana y papas hilo.</p>
+        <span class="badge">Más pedido</span>
+      </div>
+      <div class="ticket">
+        <div class="ticket-top"><h3>A lo pobre</h3><span class="price">$3.200</span></div>
+        <p>Vienesa, cebolla frita, huevo frito y papas fritas encima.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><h2>Churrascos</h2><div class="line"></div></div>
+    <div class="grid">
+      <div class="ticket">
+        <div class="ticket-top"><h3>Churrasco italiano</h3><span class="price">$4.200</span></div>
+        <p>Lomito laminado, tomate, palta y mayo en pan amasado.</p>
+      </div>
+      <div class="ticket">
+        <div class="ticket-top"><h3>Chacarero</h3><span class="price">$4.500</span></div>
+        <p>Lomito, poroto verde, tomate y ají verde. Picante bajo pedido.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><h2>Para compartir</h2><div class="line"></div></div>
+    <div class="grid">
+      <div class="ticket">
+        <div class="ticket-top"><h3>Papas locas</h3><span class="price">$4.800</span></div>
+        <p>Papas fritas, tocino, cebolla morada, queso derretido y salsas.</p>
+      </div>
+      <div class="ticket">
+        <div class="ticket-top"><h3>Chorrillana</h3><span class="price">$8.900</span></div>
+        <p>Papas fritas, carne, cebolla salteada y dos huevos fritos. Para 2.</p>
+        <span class="badge">Para compartir</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><h2>Bebidas</h2><div class="line"></div></div>
+    <div class="grid">
+      <div class="ticket">
+        <div class="ticket-top"><h3>Bebida lata</h3><span class="price">$1.200</span></div>
+        <p>Coca-Cola, Sprite, Fanta o Ginger.</p>
+      </div>
+      <div class="ticket">
+        <div class="ticket-top"><h3>Milkshake</h3><span class="price">$2.900</span></div>
+        <p>Vainilla, chocolate o frutilla, bien espeso.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="stamp">¡Rico y al toque!</div>
+    <p>Retiro en local o delivery propio · Pagos con tarjeta y transferencia</p>
+  </div>
+
+</body>
+</html>
